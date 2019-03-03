@@ -36,16 +36,12 @@ public class Car {
     public void newPassanger() {
         if (passenger <= passengerCapacity) {
             passenger++;
-        } else {
-            return;
         }
     }
 
     public void getOutPassanger() {
         if (passenger > 0) {
             passenger--;
-        } else {
-            return;
         }
     }
 
