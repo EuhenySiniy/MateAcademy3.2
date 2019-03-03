@@ -1,9 +1,10 @@
 package car.app;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Car {
-    private final int yearOfManufacture;
+    private final Date yearOfManufacture;
     private String typeMotor;
     private int maxSpeed;
     private double accelerationTo100;
@@ -13,11 +14,17 @@ public class Car {
     private ArrayList<CarWheel> wheels;
     private ArrayList<CarDoor> doors;
 
-    public Car(int yearOfManufacture) {
+    public Car(Date yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
     }
 
-    public Car(int yearOfManufacture, String typeMotor, int maxSpeed, double accelerationTo100, int passengerCapacity, int passenger, int speed) {
+    public Car(Date yearOfManufacture,
+               String typeMotor,
+               int maxSpeed,
+               double accelerationTo100,
+               int passengerCapacity,
+               int passenger,
+               int speed) {
         this.yearOfManufacture = yearOfManufacture;
         this.typeMotor = typeMotor;
         this.maxSpeed = maxSpeed;
@@ -56,17 +63,17 @@ public class Car {
     }
 
     public CarDoor getDoor(int indx) {
-        try {
+        if (indx > 0) {
             return doors.get(indx);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } else {
             return null;
         }
     }
 
     public CarWheel getWheel(int indx) {
-        try {
+        if (indx > 0) {
             return wheels.get(indx);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } else {
             return null;
         }
     }
@@ -76,7 +83,7 @@ public class Car {
     }
 
     public void addTheWheel(int x) {
-        for (int a = 0; a < x; a++) {
+        for (int j = 0; j < x; j++) {
             wheels.add(new CarWheel());
         }
     }
