@@ -108,7 +108,7 @@ public class Car {
         }
     }
 
-    public void info() {
+    public final void info() {
         System.out.println("Vehicle year - " + yearOfManufacture);
         System.out.println("Motor - " + typeMotor);
         System.out.println("Max speed - " + maxSpeed);

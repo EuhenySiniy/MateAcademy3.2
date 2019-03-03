@@ -29,7 +29,7 @@ public class CarWheel {
         return wheelWear;
     }
 
-    public void info() {
+    public final void info() {
         System.out.println("Wheel condition - " + getWheelWear());
     }
 }

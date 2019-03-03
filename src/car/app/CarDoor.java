@@ -45,7 +45,7 @@ public class CarDoor {
         this.isWindow = !this.isWindow;
     }
 
-    public void info() {
+    public final void info() {
         System.out.println("The door is " + (isDoor() ? "opened" : "close")
                 + " and window is " + (isWindow() ? "opened" : "closed"));
     }
