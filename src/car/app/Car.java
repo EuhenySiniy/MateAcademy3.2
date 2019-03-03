@@ -1,10 +1,10 @@
 package car.app;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Car {
-    private final Date yearOfManufacture;
+    private final LocalDate yearOfManufacture;
     private String typeMotor;
     private int maxSpeed;
     private double accelerationTo100;
@@ -14,17 +14,12 @@ public class Car {
     private ArrayList<CarWheel> wheels;
     private ArrayList<CarDoor> doors;
 
-    public Car(Date yearOfManufacture) {
+    public Car(LocalDate yearOfManufacture) {
         this.yearOfManufacture = yearOfManufacture;
     }
 
-    public Car(Date yearOfManufacture,
-               String typeMotor,
-               int maxSpeed,
-               double accelerationTo100,
-               int passengerCapacity,
-               int passenger,
-               int speed) {
+    public Car(LocalDate yearOfManufacture, String typeMotor, int maxSpeed, double accelerationTo100,
+               int passengerCapacity, int passenger, int speed) {
         this.yearOfManufacture = yearOfManufacture;
         this.typeMotor = typeMotor;
         this.maxSpeed = maxSpeed;
@@ -54,25 +49,17 @@ public class Car {
         }
     }
 
-    public void getOutPassangers() {
-        if (passenger > 0) {
-            this.passenger = 0;
-        } else {
-            return;
-        }
-    }
-
-    public CarDoor getDoor(int indx) {
-        if (indx > 0) {
-            return doors.get(indx);
+    public CarDoor getDoor(int index) {
+        if (index > doors.size()) {
+            return doors.get(index);
         } else {
             return null;
         }
     }
 
-    public CarWheel getWheel(int indx) {
-        if (indx > 0) {
-            return wheels.get(indx);
+    public CarWheel getWheel(int index) {
+        if (index > wheels.size()) {
+            return wheels.get(index);
         } else {
             return null;
         }
